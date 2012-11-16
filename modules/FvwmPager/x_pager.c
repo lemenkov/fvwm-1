@@ -2808,6 +2808,11 @@ static void label_window_wrap(PagerWindow *t)
         len   = FlocaleStringNumberOfBytes(FwindowFont, next);
         width = FlocaleTextWidth(FwindowFont, next, len);
 
+        if (end - next < len) {
+          fprintf(stderr, "%s: malformed window label\n", MyName);
+          return;
+        }
+
         if (width > t->pager_view_width - cur_width - 2*label_border && cur != next)
           break;
 
