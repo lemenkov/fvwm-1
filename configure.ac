@@ -14,7 +14,7 @@ fi
 AC_SUBST(AR_FLAGS, [cr])
 
 AC_INIT([fvwm],
-	m4_esyscmd_s([utils/fvwm-version-str.sh]),
+	[2.6.7],
 	[fvwm-workers@fvwm.org])
 AC_CONFIG_AUX_DIR(etc)
 AM_INIT_AUTOMAKE([foreign subdir-objects])
